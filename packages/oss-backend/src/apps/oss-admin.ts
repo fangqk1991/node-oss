@@ -4,8 +4,6 @@ import { WebApp } from '@fangcha/backend-kit/lib/router'
 import { SsoSdkPlugin } from '@fangcha/web-auth-sdk'
 import { UserSdkPlugin } from '@fangcha/user-sdk'
 import { MyDatabase } from '../services/MyDatabase'
-import { JobWebPlugin } from '@fangcha/job-sdk'
-import { MyJobServer } from '../services/MyJobServer'
 
 const app = new WebApp({
   env: GlobalAppConfig.Env,
@@ -29,14 +27,11 @@ const app = new WebApp({
         jwtSecret: OssConfig.adminJwtSecret,
       },
     }),
-    JobWebPlugin({
-      jobServer: MyJobServer,
-    }),
     UserSdkPlugin(OssConfig.userService),
   ],
 
   checkHealth: async () => {
-    await MyDatabase.jobDB.ping()
+    await MyDatabase.ossDB.ping()
   },
 })
 app.launch()

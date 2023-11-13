@@ -2,8 +2,8 @@ import { FCDatabase } from 'fc-sql'
 import { DBOptionsBuilder } from '@fangcha/tools/lib/database'
 import { OssConfig } from '../OssConfig'
 
-FCDatabase.instanceWithName('jobDB').init(new DBOptionsBuilder(OssConfig.jobDB).build() as any)
+FCDatabase.instanceWithName('ossDB').init(new DBOptionsBuilder(OssConfig.ossDB).build() as any)
 
 export const MyDatabase = {
-  jobDB: FCDatabase.instanceWithName('jobDB'),
+  ossDB: FCDatabase.instanceWithName('ossDB'),
 }

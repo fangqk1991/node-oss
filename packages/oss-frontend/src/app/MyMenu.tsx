@@ -5,11 +5,11 @@ export const MyMenu: Route = {
   path: '/',
   children: [
     {
-      name: '任务管理',
+      name: '文件管理',
       children: [
         {
           path: TaskPages.JobListRoute,
-          name: '任务列表',
+          name: '文件列表',
         },
       ],
     },
