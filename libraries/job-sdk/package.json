@@ -1,0 +1,27 @@
+{
+  "name": "@fangcha/job-sdk",
+  "version": "0.2.0",
+  "description": "Job SDK.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "lib/index.js",
+    "typings": "lib/index.d.ts"
+  },
+  "repository": "https://github.com/fangqk1991/node-job.git",
+  "scripts": {
+    "test": "nyc mocha --exit",
+    "build": "rm -rf ./lib/ && tsc",
+    "prepublish": "pnpm build"
+  },
+  "author": "fang <me@fangqk.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fangcha/job-models": "workspace:^",
+    "@fangcha/job": "workspace:^",
+    "@fangcha/router": "^0.31.0"
+  },
+  "files": [
+    "lib/*",
+    "src/*"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "scripts": {
+    "init-husky": "husky install",
+    "preinstall": "npx only-allow pnpm",
+    "build": "pnpm --filter \"./packages/**\" build"
+  },
+  "dependencies": {
+    "fc-config": "^0.13.0"
+  },
+  "devDependencies": {
+    "@fangcha/eslint": "^0.8.0",
+    "@fangcha/react": "^0.36.0",
+    "@fangcha/webpack": "^0.16.0",
+    "@ant-design/pro-components": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react-dom": "^18.0.11",
+    "antd": "^5.2.3",
+    "react-router": "^6.8.2",
+    "react-router-dom": "^6.8.2",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "ali-oss-lazy-upload": "^0.4.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^10.0.7",
+    "mocha": "^10.2.0",
+    "@types/mocha": "^10.0.3",
+    "nyc": "^15.1.0",
+    "typescript": "^4.9.3",
+    "typescript-coverage-report": "^0.6.4",
+    "only-allow": "^1.1.1"
+  },
+  "lint-staged": {
+    "*.{vue,ts,tsx,js}": [
+      "eslint --cache --fix"
+    ],
+    "*.json": [
+      "prettier --parser=json --write"
+    ],
+    "*.{css,scss}": [
+      "prettier --parser=css --write"
+    ]
+  }
+}

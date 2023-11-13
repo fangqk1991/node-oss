@@ -1,0 +1,15 @@
+{
+  "name": "@fangcha/job-react",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/fangqk1991/node-job.git",
+  "author": "fang <me@fangqk.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fangcha/job-models": "workspace:^",
+    "@fangcha/auth-react": "^0.18.0"
+  },
+  "files": [
+    "src/*"
+  ]
+}

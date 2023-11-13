@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "job-backend",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "concurrently --raw 'yarn start:typecheck' 'yarn admin:compile'",
+    "start-resque": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-resque.ts",
+    "start-schedule": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-schedule.ts",
+    "admin:compile": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-admin.ts",
+    "start:typecheck": "tsc -w --noEmit",
+    "build": "rm -rf dist && webpack --config ./webpack.config.js",
+    "test": "nyc mocha --require ts-node/register tests/**/*.test.ts --timeout 1000000 --exit"
+  },
+  "dependencies": {
+    "@fangcha/job-models": "workspace:^",
+    "@fangcha/job-sdk": "workspace:^",
+    "@fangcha/job": "workspace:^",
+    "@fangcha/resque": "workspace:^",
+    "@fangcha/resque-sdk": "workspace:^",
+    "@fangcha/web-auth-sdk": "^0.8.0",
+    "@fangcha/user-sdk": "^0.18.0",
+    "@fangcha/session": "^0.2.0",
+    "tunnel": "^0.0.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}
