@@ -2,7 +2,7 @@ import assert from '@fangcha/assert'
 import { SpecFactory } from '@fangcha/router'
 import { Context } from 'koa'
 import { _OSSResource, OSSService } from '../main'
-import { OssApis } from '../common/apis'
+import { OssApis } from '@fangcha/oss-models'
 import { RemoteFile } from '@fangcha/ali-oss'
 import { FangchaSession } from '@fangcha/session'
 

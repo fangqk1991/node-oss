@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "Ali OSS Lazy Upload, if a file exists in remote space, it will be ignored.",
   "main": "index.js",
-  "repository": "https://github.com/fangqk1991/fc-kits.git",
+  "repository": "https://github.com/fangqk1991/node-oss.git",
   "keywords": [
     "ali-oss"
   ],

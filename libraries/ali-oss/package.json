@@ -7,7 +7,7 @@
     "main": "lib/index.js",
     "typings": "lib/index.d.ts"
   },
-  "repository": "https://github.com/fangqk1991/fc-kits.git",
+  "repository": "https://github.com/fangqk1991/node-oss.git",
   "scripts": {
     "test": "nyc mocha --exit",
     "build": "rm -rf ./lib/ && tsc",

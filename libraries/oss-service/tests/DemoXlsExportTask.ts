@@ -1,5 +1,5 @@
 import { _OSSResource, OSSService, TaskHandlerProtocol } from '../src'
-import { OSSProvider, ResourceTaskParams } from '../src/common/models'
+import { OSSProvider, ResourceTaskParams } from '@fangcha/oss-models'
 import { BackendFile } from '@fangcha/tools/lib/file-backend'
 
 interface Params {

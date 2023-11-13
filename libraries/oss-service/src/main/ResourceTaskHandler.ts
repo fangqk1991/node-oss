@@ -1,6 +1,6 @@
 import { md5 } from '@fangcha/tools'
 import { _ResourceTask } from './models/extensions/_ResourceTask'
-import { ResourceTaskParams, ResourceTaskStatus } from '../common/models'
+import { ResourceTaskParams, ResourceTaskStatus } from '@fangcha/oss-models'
 import { _OSSResource } from './models/extensions/_OSSResource'
 import { OSSService } from './OSSService'
 import assert from '@fangcha/assert'

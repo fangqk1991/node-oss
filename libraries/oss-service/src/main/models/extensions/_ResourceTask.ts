@@ -1,5 +1,5 @@
 import __ResourceTask from '../auto-build/__ResourceTask'
-import { ResourceTaskModel, ResourceTaskStatus } from '../../../common/models'
+import { ResourceTaskModel, ResourceTaskStatus } from '@fangcha/oss-models'
 
 export class _ResourceTask extends __ResourceTask {
   taskStatus!: ResourceTaskStatus

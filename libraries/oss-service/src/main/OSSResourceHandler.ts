@@ -1,6 +1,6 @@
 import { _OSSResource } from './models/extensions/_OSSResource'
 import assert from '@fangcha/assert'
-import { OSSResourceModel, OSSStatus, ResourceMetadata } from '../common/models'
+import { OSSResourceModel, OSSStatus, ResourceMetadata } from '@fangcha/oss-models'
 import { OSSUtils } from '@fangcha/ali-oss'
 
 export class OSSResourceHandler {

@@ -1,5 +1,5 @@
 import __OSSResource from '../auto-build/__OSSResource'
-import { OSSProvider, OSSResourceParams, OSSStatus } from '../../../common/models'
+import { OSSProvider, OSSResourceParams, OSSStatus } from '@fangcha/oss-models'
 import { makeUUID } from '@fangcha/tools'
 
 export class _OSSResource extends __OSSResource {

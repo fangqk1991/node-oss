@@ -1,8 +1,8 @@
 import assert from '@fangcha/assert'
 import { SpecFactory } from '@fangcha/router'
-import { DownloadApis } from '../common/apis'
+import { DownloadApis } from '@fangcha/oss-models'
 import { _ResourceTask, _UserResourceTask, OSSService, ResourceTaskHandler } from '../main'
-import { ResourceTaskModel } from '../common/models'
+import { ResourceTaskModel } from '@fangcha/oss-models'
 import { FangchaSession } from '@fangcha/session'
 
 const factory = new SpecFactory('导出任务')
