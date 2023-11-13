@@ -1,5 +1,5 @@
 import { Route } from '@ant-design/pro-layout/es/typing'
-import { TaskPages } from '@web/job-common/admin-api'
+import { TaskPages } from '@web/oss-common/admin-api'
 
 export const MyMenu: Route = {
   path: '/',

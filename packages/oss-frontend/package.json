@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "job-frontend",
+  "name": "oss-frontend",
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
@@ -9,7 +9,7 @@
     "build:dev": "rm -rf dist && webpack --config webpack.staging.js"
   },
   "devDependencies": {
-    "@web/job-common": "workspace:^",
+    "@web/oss-common": "workspace:^",
     "@fangcha/job-models": "workspace:^",
     "@fangcha/sso-models": "^0.6.0",
     "@fangcha/account-models": "^0.19.0",

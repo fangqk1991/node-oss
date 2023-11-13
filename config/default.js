@@ -1,7 +1,7 @@
 module.exports = {
   Env: 'It will be rewritten by process.env.NODE_CONFIG_ENV or process.env.NODE_ENV',
   Tags: [],
-  Job: {
+  Oss: {
     configVersion: '0.0.0',
 
     adminBaseURL: 'http://localhost:3799',
@@ -22,7 +22,7 @@ module.exports = {
       userInfoURL: 'https://sso.example.com/api/v1/oauth/user-info',
     },
     adminFrontendConfig: {
-      appName: 'Job Admin',
+      appName: 'Oss Admin',
       colorPrimary: 'rgb(221 115 164)',
     },
     userService: {

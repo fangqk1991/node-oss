@@ -4,7 +4,7 @@ import { MainLayout } from '../core/MainLayout'
 import { RouteErrorBoundary } from '@fangcha/react'
 import { HomeView } from '../core/HomeView'
 import { MyMenu } from './MyMenu'
-import { TaskPages } from '@web/job-common/admin-api'
+import { TaskPages } from '@web/oss-common/admin-api'
 import { JobListView } from '../views/JobListView'
 
 export const MyRouter = createBrowserRouter([

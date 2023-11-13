@@ -1,13 +1,12 @@
 {
   "private": true,
-  "name": "job-backend",
+  "name": "oss-backend",
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
     "start": "concurrently --raw 'yarn start:typecheck' 'yarn admin:compile'",
-    "start-resque": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-resque.ts",
     "start-schedule": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-schedule.ts",
-    "admin:compile": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/job-admin.ts",
+    "admin:compile": "ts-node-dev --no-notify --ignore-watch node_modules src/apps/oss-admin.ts",
     "start:typecheck": "tsc -w --noEmit",
     "build": "rm -rf dist && webpack --config ./webpack.config.js",
     "test": "nyc mocha --require ts-node/register tests/**/*.test.ts --timeout 1000000 --exit"

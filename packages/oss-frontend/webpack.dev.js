@@ -5,12 +5,12 @@ const config = require('fc-config').GlobalAppConfig
 module.exports = new WebpackBuilder()
   .useReact()
   .setDevMode(true)
-  .setPort(config.Job.adminPort_frontend)
+  .setPort(config.Oss.adminPort_frontend)
   .setEntry('./src/index.tsx')
   .setExtras({
     devServer: {
       proxy: {
-        '/api': `http://localhost:${config.Job.adminPort}`,
+        '/api': `http://localhost:${config.Oss.adminPort}`,
       },
     },
   })
