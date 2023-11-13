@@ -12,11 +12,6 @@
     "test": "nyc mocha --require ts-node/register tests/**/*.test.ts --timeout 1000000 --exit"
   },
   "dependencies": {
-    "@fangcha/job-models": "workspace:^",
-    "@fangcha/job-sdk": "workspace:^",
-    "@fangcha/job": "workspace:^",
-    "@fangcha/resque": "workspace:^",
-    "@fangcha/resque-sdk": "workspace:^",
     "@fangcha/web-auth-sdk": "^0.8.0",
     "@fangcha/user-sdk": "^0.18.0",
     "@fangcha/session": "^0.2.0",

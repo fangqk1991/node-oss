@@ -1,0 +1,49 @@
+{
+  "name": "@fangcha/oss-service",
+  "version": "0.9.0",
+  "description": "General Group.",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "lib/index.js",
+    "typings": "lib/index.d.ts"
+  },
+  "repository": "https://github.com/fangqk1991/fc-kits.git",
+  "scripts": {
+    "build": "rm -rf ./lib/ && tsc",
+    "prepublish": "pnpm build",
+    "rebuild-models": "ts-node ./tools/rebuild-models.ts"
+  },
+  "keywords": [
+    "oss"
+  ],
+  "author": "fang <me@fangqk.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fangcha/ali-oss": "workspace:^",
+    "@fangcha/app-request": "^1.8.0",
+    "@fangcha/tools": "^1.39.0",
+    "@fangcha/assert": "^1.2.0",
+    "@fangcha/backend-kit": "^0.64.0",
+    "@fangcha/generator": "^0.7.0",
+    "@fangcha/logger": "^0.5.0",
+    "@fangcha/router": "^0.31.0",
+    "@fangcha/session": "^0.2.0",
+    "@fangcha/swagger": "^0.1.1",
+    "@fangcha/resque": "^1.7.0",
+    "fc-feed": "^0.30.0",
+    "fc-model": "^0.6.0",
+    "fc-sql": "^0.33.0",
+    "@types/ali-oss": "^6.16.6",
+    "@types/koa": "2.13.5",
+    "@types/shelljs": "^0.8.11",
+    "koa": "^2.13.4",
+    "shelljs": "^0.8.5"
+  },
+  "files": [
+    "lib/*",
+    "src/*"
+  ],
+  "nyc": {
+    "sourceMap": false
+  }
+}
