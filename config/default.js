@@ -47,5 +47,32 @@ module.exports = {
       timezone: '+08:00',
       logging: false,
     },
+    ossDownloadDir: '/data/oss-zone/downloads',
+    ossOptions: {
+      Default: {
+        visitor: {
+          region: 'oss-cn-shanghai',
+          accessKeyId: '__accessKeyId__',
+          accessKeySecret: '<OSS accessKeySecret>',
+          bucket: '__bucket__',
+          secure: true,
+        },
+        uploader: {
+          region: 'oss-cn-shanghai',
+          accessKeyId: '__accessKeyId__',
+          accessKeySecret: '<OSS accessKeySecret>',
+          bucket: '__bucket__',
+          secure: true,
+        },
+        uploadSignature: {
+          accessKeyId: '__accessKeyId__',
+          accessKeySecret: '<OSS accessKeySecret>',
+          bucketURL: '<bucketURL>',
+          timeout: 3000,
+        },
+        remoteRootDir: 'oss-staging',
+        downloadRootDir: '/data/oss-zone/downloads',
+      },
+    },
   },
 }

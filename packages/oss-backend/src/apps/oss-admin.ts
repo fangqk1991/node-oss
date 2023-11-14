@@ -4,6 +4,7 @@ import { WebApp } from '@fangcha/backend-kit/lib/router'
 import { SsoSdkPlugin } from '@fangcha/web-auth-sdk'
 import { UserSdkPlugin } from '@fangcha/user-sdk'
 import { MyDatabase } from '../services/MyDatabase'
+import { MyOssPlugin } from '../services/MyOssPlugin'
 
 const app = new WebApp({
   env: GlobalAppConfig.Env,
@@ -28,6 +29,7 @@ const app = new WebApp({
       },
     }),
     UserSdkPlugin(OssConfig.userService),
+    MyOssPlugin,
   ],
 
   checkHealth: async () => {

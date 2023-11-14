@@ -15,6 +15,7 @@
     "@fangcha/web-auth-sdk": "^0.8.0",
     "@fangcha/user-sdk": "^0.18.0",
     "@fangcha/session": "^0.2.0",
+    "@fangcha/oss-service": "workspace:^",
     "tunnel": "^0.0.6"
   },
   "devDependencies": {
