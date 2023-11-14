@@ -1,15 +1,10 @@
+import { ResourceTaskStatus } from './ResourceTaskStatus'
+
 export interface ResourceTaskParams {
   userEmail: string
   taskType: string
   rawParams: {}
   fileName: string
-}
-
-export enum ResourceTaskStatus {
-  Pending = 'Pending',
-  Processing = 'Processing',
-  Success = 'Success',
-  Fail = 'Fail',
 }
 
 export interface ResourceTaskModel {
