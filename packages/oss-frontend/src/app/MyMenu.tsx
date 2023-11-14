@@ -8,7 +8,7 @@ export const MyMenu: Route = {
       name: '文件管理',
       children: [
         {
-          path: TaskPages.JobListRoute,
+          path: TaskPages.ResourceTaskListRoute,
           name: '文件列表',
         },
       ],

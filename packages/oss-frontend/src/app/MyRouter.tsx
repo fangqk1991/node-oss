@@ -5,7 +5,7 @@ import { RouteErrorBoundary } from '@fangcha/react'
 import { HomeView } from '../core/HomeView'
 import { MyMenu } from './MyMenu'
 import { TaskPages } from '@web/oss-common/admin-api'
-import { JobListView } from '../views/JobListView'
+import { ResourceTaskListView } from '../views/ResourceTaskListView'
 
 export const MyRouter = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ export const MyRouter = createBrowserRouter([
         element: <HomeView />,
       },
       {
-        path: TaskPages.JobListRoute,
-        element: <JobListView />,
+        path: TaskPages.ResourceTaskListRoute,
+        element: <ResourceTaskListView />,
       },
       {
         path: '*',

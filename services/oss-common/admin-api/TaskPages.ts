@@ -1,7 +1,7 @@
 import * as assert from 'assert'
 
 export class TaskPages {
-  public static JobListRoute = '/v1/job'
+  public static ResourceTaskListRoute = '/oss-sdk/v1/resource-task'
 
   public static buildRoute(route: string, params: { [p: string]: string | number } | (string | number)[]) {
     if (Array.isArray(params)) {
