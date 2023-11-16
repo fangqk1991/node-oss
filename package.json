@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@fangcha/eslint": "^0.8.0",
-    "@fangcha/react": "^0.36.0",
+    "@fangcha/react": "^0.43.0",
     "@fangcha/webpack": "^0.16.0",
     "@ant-design/pro-components": "^2.4.1",
     "react": "^18.2.0",

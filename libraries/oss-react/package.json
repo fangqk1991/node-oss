@@ -1,0 +1,15 @@
+{
+  "name": "@fangcha/oss-react",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/fangqk1991/node-oss.git",
+  "author": "fang <me@fangqk.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fangcha/oss-models": "workspace:^",
+    "@fangcha/auth-react": "^0.18.0"
+  },
+  "files": [
+    "src/*"
+  ]
+}

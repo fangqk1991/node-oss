@@ -4,8 +4,7 @@ import { MainLayout } from '../core/MainLayout'
 import { RouteErrorBoundary } from '@fangcha/react'
 import { HomeView } from '../core/HomeView'
 import { MyMenu } from './MyMenu'
-import { TaskPages } from '@web/oss-common/admin-api'
-import { ResourceTaskListView } from '../views/ResourceTaskListView'
+import { OssSdkRoutes } from '@fangcha/oss-react'
 
 export const MyRouter = createBrowserRouter([
   {
@@ -17,10 +16,7 @@ export const MyRouter = createBrowserRouter([
         path: '/',
         element: <HomeView />,
       },
-      {
-        path: TaskPages.ResourceTaskListRoute,
-        element: <ResourceTaskListView />,
-      },
+      ...OssSdkRoutes,
       {
         path: '*',
         element: <div>404 Not Found</div>,
