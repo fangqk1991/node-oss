@@ -5,6 +5,8 @@ import { RouteErrorBoundary } from '@fangcha/react'
 import { HomeView } from '../core/HomeView'
 import { MyMenu } from './MyMenu'
 import { OssSdkRoutes } from '@fangcha/oss-react'
+import { UploadTestView } from '../views/UploadTestView'
+import { TaskPages } from '@web/oss-common/admin-api'
 
 export const MyRouter = createBrowserRouter([
   {
@@ -15,6 +17,10 @@ export const MyRouter = createBrowserRouter([
       {
         path: '/',
         element: <HomeView />,
+      },
+      {
+        path: TaskPages.UploadTestRoute,
+        element: <UploadTestView />,
       },
       ...OssSdkRoutes,
       {

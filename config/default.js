@@ -24,6 +24,10 @@ module.exports = {
     adminFrontendConfig: {
       appName: 'Oss Admin',
       colorPrimary: 'rgb(221 115 164)',
+      ossParams: {
+        defaultBucketName: 'fc-web-oss',
+        defaultOssZone: 'datawich',
+      },
     },
     userService: {
       urlBase: '<urlBase>',

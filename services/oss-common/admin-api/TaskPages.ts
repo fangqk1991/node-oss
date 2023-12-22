@@ -3,6 +3,8 @@ import * as assert from 'assert'
 export class TaskPages {
   public static ResourceTaskListRoute = '/oss-sdk/v1/resource-task'
 
+  public static UploadTestRoute = '/v1/upload-test'
+
   public static buildRoute(route: string, params: { [p: string]: string | number } | (string | number)[]) {
     if (Array.isArray(params)) {
       let index = 0

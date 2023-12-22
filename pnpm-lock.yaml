@@ -91,9 +91,13 @@ importers:
     specifiers:
       '@fangcha/auth-react': ^0.18.0
       '@fangcha/oss-models': workspace:^
+      '@types/spark-md5': ^3.0.2
+      spark-md5: ^3.0.2
     devDependencies:
       '@fangcha/auth-react': 0.18.0
       '@fangcha/oss-models': link:../oss-models
+      '@types/spark-md5': 3.0.4
+      spark-md5: 3.0.2
 
   libraries/oss-service:
     specifiers:
@@ -2920,6 +2924,10 @@ packages:
     resolution: {integrity: sha512-MK9V6NzAS1+Ud7JV9lJLFqW85VbC9dq3LmwZCuBe4wBDgKC0Kj/jd8Xl+nSviU+Qc3+m7umHHyHg//2KSa0a0Q==}
     dependencies:
       '@types/node': 20.9.0
+    dev: true
+
+  /@types/spark-md5/3.0.4:
+    resolution: {integrity: sha512-qtOaDz+IXiNndPgYb6t1YoutnGvFRtWSNzpVjkAPCfB2UzTyybuD4Tjgs7VgRawum3JnJNRwNQd4N//SvrHg1Q==}
     dev: true
 
   /@types/strip-bom/3.0.0:
@@ -10343,6 +10351,10 @@ packages:
   /source-map/0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /spark-md5/3.0.2:
+    resolution: {integrity: sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==}
     dev: true
 
   /spawn-command/0.0.2:

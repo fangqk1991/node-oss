@@ -1,3 +1,6 @@
+export * from './OssSDK'
+export * from './core/OssHTTP'
+export * from './core/OssUploadDialog'
 export * from './views/ResourceTaskListView'
 export * from './views/OssSdkRoutes'
 export * from './services/DownloadTaskHelper'

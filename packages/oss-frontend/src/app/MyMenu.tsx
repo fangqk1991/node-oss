@@ -8,6 +8,10 @@ export const MyMenu: Route = {
       name: '文件管理',
       children: [
         {
+          path: TaskPages.UploadTestRoute,
+          name: '上传测试',
+        },
+        {
           path: TaskPages.ResourceTaskListRoute,
           name: '文件列表',
         },
