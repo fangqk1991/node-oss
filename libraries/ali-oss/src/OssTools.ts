@@ -1,5 +1,5 @@
 export class OssTools {
-  public buildThumbnailOptions(width?: number, height?: number) {
+  public static buildThumbnailOptions(width?: number, height?: number) {
     if (!width && !height) {
       return {}
     }
