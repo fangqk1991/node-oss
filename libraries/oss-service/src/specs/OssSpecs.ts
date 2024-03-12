@@ -18,19 +18,18 @@ const prepareResource = async (ctx: Context) => {
 const factory = new SpecFactory('上传文件')
 
 factory.prepare(OssApis.OssResourcePrepare, async (ctx) => {
-  const bucketName = ctx.params.bucketName as string
-  const ossZone = ctx.params.ossZone as string
-  const { fileHash, fileExt, fileSize, mimeType } = ctx.request.body
+  const { fileHash, fileExt, fileSize, mimeType, bucketName, ossZone } = ctx.request.body
   // assert.ok(OssZoneDescriptor.checkValueValid(ossZone), `ossZone invalid`)
   // assert.ok(OssBucketDescriptor.checkValueValid(bucketName), `bucketName invalid`)
+
   assert.ok(!!fileHash && fileHash.length === 32, 'Params Error: fileHash invalid')
-  const remoteFile = RemoteFile.fileWithHash(ossZone, fileHash, fileExt)
+  const remoteFile = RemoteFile.fileWithHash(ossZone || OSSService.defaultOssZone(), fileHash, fileExt)
   const remotePath = remoteFile.remotePath()
 
   const session = ctx.session as FangchaSession
 
   const params = OSSService.makePureParams({
-    bucketName: bucketName,
+    bucketName: bucketName || OSSService.defaultBucketName(),
     ossKey: remotePath,
     uploader: session.curUserStr(),
     size: fileSize,

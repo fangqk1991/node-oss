@@ -55,6 +55,14 @@ class _OSSService {
     return this
   }
 
+  public defaultBucketName() {
+    return this._options.defaultOssOptions.uploader.bucket
+  }
+
+  public defaultOssZone() {
+    return this._options.defaultOssOptions.remoteRootDir
+  }
+
   public setDatabase(database: FCDatabase) {
     _OSSResource.setDatabase(database)
     _ResourceTask.setDatabase(database)

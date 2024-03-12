@@ -4,7 +4,7 @@ import { MyRequest } from '@fangcha/auth-react'
 
 export class OssHTTP {
   public static async getOssResourceMetadata(params: OssTypicalParams): Promise<ResourceMetadata> {
-    const request = MyRequest(new CommonAPI(OssApis.OssResourcePrepare, params.bucketName, params.ossZone))
+    const request = MyRequest(new CommonAPI(OssApis.OssResourcePrepare))
     request.setBodyData(params)
     return request.quickSend()
   }

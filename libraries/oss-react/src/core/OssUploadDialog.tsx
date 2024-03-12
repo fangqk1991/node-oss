@@ -7,7 +7,6 @@ import { FrontendFile } from '@fangcha/tools/lib/file-frontend'
 import { OssHTTP } from './OssHTTP'
 import { OssSDK } from '../OssSDK'
 import axios from 'axios'
-import assert from '@fangcha/assert'
 
 interface Props extends DialogProps {
   description?: React.ReactNode
@@ -43,9 +42,6 @@ export class OssUploadDialog extends ReactDialog<Props, OSSResourceModel> {
 
         const bucketName = props.bucketName || OssSDK.options.defaultBucketName
         const ossZone = props.ossZone || OssSDK.options.defaultOssZone
-
-        assert.ok(!!bucketName, 'bucketName missing')
-        assert.ok(!!ossZone, 'ossZone missing')
 
         const metadataDelegate: MetadataBuildProtocol = props.metadataDelegate || OssHTTP.getOssResourceMetadata
         const resourceMetadata = await metadataDelegate({

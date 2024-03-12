@@ -1,7 +1,7 @@
 export const OssApis = {
   OssResourcePrepare: {
     method: 'POST',
-    route: '/api/v0/oss/bucket/:bucketName/zone/:ossZone/resource',
+    route: '/api/v0/oss/resource-metadata',
     description: '准备 OSS 上传需要的相关信息',
   },
   OssResourceStatusMark: {
