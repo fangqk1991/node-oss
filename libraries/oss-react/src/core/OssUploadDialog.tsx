@@ -42,7 +42,8 @@ export class OssUploadDialog extends ReactDialog<Props, OSSResourceModel> {
         const bucketName = props.bucketName || OssSDK.options.defaultBucketName
         const ossZone = props.ossZone || OssSDK.options.defaultOssZone
 
-        const metadataDelegate: MetadataBuildProtocol = props.metadataDelegate || OssSDK.getOssResourceMetadata
+        const metadataDelegate: MetadataBuildProtocol =
+          props.metadataDelegate || OssSDK.getOssResourceMetadata.bind(OssSDK)
         const resourceMetadata = await metadataDelegate({
           fileHash: fileHash,
           mimeType: mimeType,

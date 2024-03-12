@@ -3,7 +3,7 @@ import { _OSSResource } from './models/extensions/_OSSResource'
 import { AliOSSOptions, OSSUtils, RemoteFile, UploadSignatureOptions } from '@fangcha/ali-oss'
 import assert from '@fangcha/assert'
 import { OSSResourceHandler } from './OSSResourceHandler'
-import { OSSResourceParams, OssTypicalParams, ResourceTaskModel, ResourceTaskStatus, } from '@fangcha/oss-models'
+import { OSSResourceParams, OssTypicalParams, ResourceTaskModel, ResourceTaskStatus } from '@fangcha/oss-models'
 import { _ResourceTask } from './models/extensions/_ResourceTask'
 import { _UserResourceTask } from './models/extensions/_UserResourceTask'
 import { TaskHandlerProtocol } from './ResourceTaskHandler'
@@ -109,6 +109,17 @@ class _OSSService {
 
   public getResourceHandler(resource: _OSSResource) {
     return new OSSResourceHandler(resource, OSSService.getTools(resource.bucketName).ossUtils)
+  }
+
+  public async markResourceSucc(resourceId: string) {
+    assert.ok(!!resourceId, 'Params Error: resourceId invalid.')
+
+    const resource = (await _OSSResource.findWithUid(resourceId))!
+    assert.ok(!!resource, `OSSResource not found`)
+
+    const handler = OSSService.getResourceHandler(resource)
+    await handler.markSucc()
+    return handler.modelForClient()
   }
 
   public makePureParams(params: OSSResourceParams): OSSResourceParams {

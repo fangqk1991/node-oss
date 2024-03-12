@@ -1,6 +1,6 @@
 {
   "name": "@fangcha/oss-react",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "main": "src/index.ts",
   "repository": "https://github.com/fangqk1991/node-oss.git",
   "author": "fang <me@fangqk.com>",
