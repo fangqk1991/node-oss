@@ -1,5 +1,6 @@
-import { MetadataBuildProtocol } from '@fangcha/oss-models/lib'
-import { OssHTTP } from './core/OssHTTP'
+import { OssApis, OSSResourceModel, OssTypicalParams, ResourceMetadata } from '@fangcha/oss-models'
+import { CommonAPI } from '@fangcha/app-request'
+import { MyRequest } from '@fangcha/auth-react'
 
 interface Params {
   defaultBucketName: string
@@ -7,7 +8,10 @@ interface Params {
 }
 
 class _OssSDK {
-  buildMetadata: MetadataBuildProtocol = OssHTTP.getOssResourceMetadata
+  apis = {
+    OssResourcePrepare: OssApis.OssResourcePrepare,
+    OssResourceStatusMark: OssApis.OssResourceStatusMark,
+  }
 
   options: Params = {
     defaultBucketName: '',
@@ -17,6 +21,17 @@ class _OssSDK {
   public init(options: Params) {
     this.options = options || {}
     return this
+  }
+
+  public async getOssResourceMetadata(params: OssTypicalParams): Promise<ResourceMetadata> {
+    const request = MyRequest(new CommonAPI(this.apis.OssResourcePrepare))
+    request.setBodyData(params)
+    return request.quickSend()
+  }
+
+  public async markOssResourceSuccess(resourceId: string): Promise<OSSResourceModel> {
+    const request = MyRequest(new CommonAPI(this.apis.OssResourceStatusMark, resourceId))
+    return await request.quickSend()
   }
 }
 

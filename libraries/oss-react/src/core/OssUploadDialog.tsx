@@ -4,7 +4,6 @@ import { InboxOutlined } from '@ant-design/icons'
 import { DialogProps, ReactDialog } from '@fangcha/react'
 import { MetadataBuildProtocol, OSSResourceModel } from '@fangcha/oss-models'
 import { FrontendFile } from '@fangcha/tools/lib/file-frontend'
-import { OssHTTP } from './OssHTTP'
 import { OssSDK } from '../OssSDK'
 import axios from 'axios'
 
@@ -43,7 +42,7 @@ export class OssUploadDialog extends ReactDialog<Props, OSSResourceModel> {
         const bucketName = props.bucketName || OssSDK.options.defaultBucketName
         const ossZone = props.ossZone || OssSDK.options.defaultOssZone
 
-        const metadataDelegate: MetadataBuildProtocol = props.metadataDelegate || OssSDK.buildMetadata
+        const metadataDelegate: MetadataBuildProtocol = props.metadataDelegate || OssSDK.getOssResourceMetadata
         const resourceMetadata = await metadataDelegate({
           fileHash: fileHash,
           mimeType: mimeType,
@@ -69,7 +68,7 @@ export class OssUploadDialog extends ReactDialog<Props, OSSResourceModel> {
           },
         })
 
-        return await OssHTTP.markOssResourceSuccess(resourceMetadata.resourceId)
+        return await OssSDK.markOssResourceSuccess(resourceMetadata.resourceId)
       }
       return (
         <div>
