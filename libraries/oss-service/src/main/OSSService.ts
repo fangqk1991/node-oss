@@ -1,9 +1,9 @@
 import { FCDatabase } from 'fc-sql'
 import { _OSSResource } from './models/extensions/_OSSResource'
-import { AliOSSOptions, OSSUtils, UploadSignatureOptions } from '@fangcha/ali-oss'
+import { AliOSSOptions, OSSUtils, RemoteFile, UploadSignatureOptions } from '@fangcha/ali-oss'
 import assert from '@fangcha/assert'
 import { OSSResourceHandler } from './OSSResourceHandler'
-import { OSSResourceParams, ResourceTaskModel, ResourceTaskStatus } from '@fangcha/oss-models'
+import { OSSResourceParams, OssTypicalParams, ResourceTaskModel, ResourceTaskStatus, } from '@fangcha/oss-models'
 import { _ResourceTask } from './models/extensions/_ResourceTask'
 import { _UserResourceTask } from './models/extensions/_UserResourceTask'
 import { TaskHandlerProtocol } from './ResourceTaskHandler'
@@ -97,6 +97,7 @@ class _OSSService {
 
   public getClass_OSSResource(database: FCDatabase): typeof _OSSResource {
     class OSSResource extends _OSSResource {}
+
     OSSResource.setDatabase(database)
     return OSSResource
   }
@@ -146,6 +147,26 @@ class _OSSService {
       task.downloadUrl = ossTools.ossUtils.signatureURL(task.ossKey, options)
     }
     return task
+  }
+
+  public async makeOssResourceMetadata(options: OssTypicalParams, uploader: string) {
+    const { fileHash, fileExt, fileSize, mimeType, bucketName, ossZone } = options
+    // assert.ok(OssZoneDescriptor.checkValueValid(ossZone), `ossZone invalid`)
+    // assert.ok(OssBucketDescriptor.checkValueValid(bucketName), `bucketName invalid`)
+
+    assert.ok(!!fileHash && fileHash.length === 32, 'Params Error: fileHash invalid')
+    const remoteFile = RemoteFile.fileWithHash(ossZone || this.defaultOssZone(), fileHash, fileExt)
+    const remotePath = remoteFile.remotePath()
+
+    const params = this.makePureParams({
+      bucketName: bucketName || this.defaultBucketName(),
+      ossKey: remotePath,
+      uploader: uploader,
+      size: fileSize,
+      mimeType: mimeType,
+    })
+    const resource = await _OSSResource.generateOSSResource(params)
+    return OSSService.getResourceHandler(resource).getResourceUploadMetadata()
   }
 }
 
